@@ -186,6 +186,57 @@ int Problema1(int x)
     
 }
 
+class Poligono
+{
+    int nLados;
+public:
+    void setNumLados(int n) { nLados = n; }
+    virtual double CalcularArea() = 0;
+    virtual double CalcularPerimetro() = 0;
+    
+};
+class Triangulo: public Poligono
+{
+public:
+    double CalcularArea(int base, int altura)
+    {
+        double Area;
+        Area = (base * altura) / 2;
+        return Area;
+    }
+    double CalcularPerimetro(int nlados, double l1, double l2, double l3)
+    {
+        double Perimetro;
+        Perimetro = l1 + l2 + l3;
+        return Perimetro;
+    }
+};
+class Cuadrado : public Poligono
+{
+public:
+    double CalcularArea(int l1, int l2)
+    {
+        double Area;
+        Area = l1 * l2;
+        return Area;
+    }
+    double CalcularPerimetro(int l1, int l2)
+    {
+        double Perimetro;
+        Perimetro = (l1*2)+(l2*2);
+        return Perimetro;
+    }
+};
+void Problema2()
+{
+    /*Poligono figura;
+    figura.CalcularArea();
+    cout << "Ingrese el numero de lados";
+    int l;
+    cin >> l;*/
+
+}
+
 void Menu()
 {
     cout << "Ingrese 1 para el problema 1 y 2 para ir al problema 2 \n";
